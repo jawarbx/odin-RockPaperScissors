@@ -2,30 +2,34 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Rock Paper Scissors</title>
+		<link rel="stylesheet" href="style.css">
 		<script src="./gamescript.js" defer></script>
 	</head>
 
 	<body>
-		<div class='round-display'>
-			<h1>Current Round</h1>
-			<div id='current-round'></div>
-		</div>
-		<div id='results'>
-			<div class="player">
-				<h1>Player Score</h1>
-				<div id='human-score'></div>
+		<div class="game-div">
+			<div class='round-display'>
+				Current Round
+				<div id='current-round'></div>
 			</div>
-			<div class="computer">
-				<h1>Computer Score</h1>
-				<div id='computer-score'></div>
+			<div id='results'>
+				<div class="player">
+					Player Score
+					<div id='human-score'></div>
+				</div>
+				<div class="computer">
+					Computer Score
+					<div id='computer-score'></div>
+				</div>
 			</div>
-			<div id='result-msg'></div>
-		</div>
-		<div id='inputs'>
-			<button class="gameplay" id='Rock'>Rock</button>
-			<button class="gameplay" id='Paper'>Paper</button>
-			<button class="gameplay" id='Scissors'>Scissors</button>
+			<div id='inputs'>
+				<button class="gameplay" id='Rock'>Rock</button>
+				<button class="gameplay" id='Paper'>Paper</button>
+				<button class="gameplay" id='Scissors'>Scissors</button>
+			</div>
 		</div>
 	</body>
 </html>

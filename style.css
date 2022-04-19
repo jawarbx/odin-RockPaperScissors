@@ -1,0 +1,46 @@
+body {
+    font-family: Roboto, sans-serif;
+	font-size: 38px;
+    display: flex;
+    flex-direction: column; 
+    margin: 0px;
+    min-height: 100vh;
+	align-items: center;
+}
+
+.game-div {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	background: blue;
+	align-items: center;
+	justify-content: center;
+}
+#results {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.player,
+.computer,
+.round-display,
+#inputs {
+	background: yellow;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#inputs {
+	flex-direction: row;
+	justify-content: center;
+}
+
+#result-msg,
+#end-msg {
+	background: yellow;
+	margin: 10px;
+	text-align: center;
+}

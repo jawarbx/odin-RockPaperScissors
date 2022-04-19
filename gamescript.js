@@ -23,13 +23,20 @@ computerDisplay.textContent = computerScore;
 
 //Create display for result message and current standing
 
+const inputs = document.querySelector('#inputs');
+const inputsParent = inputs.parentNode;
+
 const roundDisplay = document.querySelector('#current-round');
 roundDisplay.textContent = roundNumber;
 
-const resultDisplay = document.querySelector('#result-msg');
+const resultDisplay = document.createElement('div');
+resultDisplay.setAttribute('id', 'result-msg');
+resultDisplay.setAttribute('height', '36px');
+resultDisplay.textContent = 'Choose a move to begin!';
+inputsParent.insertBefore(resultDisplay, inputs);
 
 const endDisplay = document.createElement('div');
-gameDisplay.appendChild(endDisplay);
+endDisplay.setAttribute('id', 'end-msg')
 
 // Create function computerPlay that stores a random action to the computerSelection variable
 function computerPlay() {
@@ -95,21 +102,17 @@ function endCondition(score1, score2) {
 	} else {
 		endDisplay.textContent = "You lost! Better luck next time!";
 	}
-
 }
 
 //Create Reset button for game
 
 function endRound() {
 		endCondition(playerScore, computerScore);
-		gameDisplay.appendChild(endDisplay);
-		gameDisplay.appendChild(resetButton);
+		inputsParent.appendChild(endDisplay);
+		inputsParent.appendChild(resetButton);
 }
 
 // Create reset function for game
-
-const inputs = document.querySelector('#inputs');
-const inputsParent = inputs.parentNode;
 
 function resetGame() {
 	roundNumber = 1;
@@ -118,16 +121,16 @@ function resetGame() {
 	playerDisplay.textContent = playerScore;
 	computerScore = 0;
 	computerDisplay.textContent = computerScore;
-	resultDisplay.textContent = '';
+	resultDisplay.textContent = 'Choose a move to begin!';
 	endDisplay.textContent = '';
-	gameDisplay.removeChild(endDisplay);
-	gameDisplay.removeChild(resetButton);
+	inputsParent.removeChild(endDisplay);
+	inputsParent.removeChild(resetButton);
 	inputsParent.appendChild(inputs);
 }
 
 const resetButton = document.createElement('button');
+resetButton.setAttribute('id', "reset-button")
 resetButton.textContent = 'Play Again!';
-resetButton.setAttribute('style', 'height: 10px; background-color: blue;');
 resetButton.addEventListener('click', () => resetGame());
 
 // Create buttons to play the game
